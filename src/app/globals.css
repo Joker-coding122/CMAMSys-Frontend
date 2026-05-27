@@ -1,0 +1,724 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: oklch(0.985 0.006 260);
+  --foreground: oklch(0.20 0.035 265);
+  --card: oklch(0.998 0.002 260);
+  --card-foreground: oklch(0.18 0.02 280);
+  --popover: oklch(0.995 0.002 280);
+  --popover-foreground: oklch(0.18 0.02 280);
+  --primary: oklch(0.48 0.20 268);
+  --primary-foreground: oklch(0.98 0.005 280);
+  --secondary: oklch(0.93 0.025 264);
+  --secondary-foreground: oklch(0.25 0.04 280);
+  --muted: oklch(0.95 0.015 280);
+  --muted-foreground: oklch(0.50 0.03 280);
+  --accent: oklch(0.68 0.15 76);
+  --accent-foreground: oklch(0.15 0.02 280);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.90 0.018 260);
+  --input: oklch(0.90 0.018 260);
+  --ring: oklch(0.55 0.22 270);
+  --chart-1: oklch(0.48 0.20 268);
+  --chart-2: oklch(0.62 0.16 205);
+  --chart-3: oklch(0.62 0.18 145);
+  --chart-4: oklch(0.70 0.16 78);
+  --chart-5: oklch(0.58 0.20 330);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.30 0.05 268);
+  --sidebar-foreground: oklch(0.96 0.01 270);
+  --sidebar-primary: oklch(0.70 0.15 270);
+  --sidebar-primary-foreground: oklch(0.98 0.005 280);
+  --sidebar-accent: oklch(0.98 0.008 270);
+  --sidebar-accent-foreground: oklch(0.30 0.08 270);
+  --sidebar-border: oklch(1 0 0 / 14%);
+  --sidebar-ring: oklch(0.70 0.15 270);
+  --brand-primary: #4f46e5;
+  --brand-secondary: #7c3aed;
+  --brand-accent: #0891b2;
+  --brand-warning: #d97706;
+  --brand-success: #059669;
+  --dashboard-bg: #f4f7fb;
+  --dashboard-surface: rgba(255, 255, 255, 0.88);
+  --surface-glass: rgba(255, 255, 255, 0.78);
+  --surface-glass-strong: rgba(255, 255, 255, 0.92);
+  --shadow-card: 0 16px 40px rgba(49, 46, 129, 0.08);
+  --shadow-card-hover: 0 20px 48px rgba(49, 46, 129, 0.12);
+}
+
+.dark {
+  --background: oklch(0.14 0.02 280);
+  --foreground: oklch(0.95 0.01 280);
+  --card: oklch(0.18 0.025 280);
+  --card-foreground: oklch(0.95 0.01 280);
+  --popover: oklch(0.18 0.025 280);
+  --popover-foreground: oklch(0.95 0.01 280);
+  --primary: oklch(0.65 0.22 270);
+  --primary-foreground: oklch(0.14 0.02 280);
+  --secondary: oklch(0.24 0.03 280);
+  --secondary-foreground: oklch(0.95 0.01 280);
+  --muted: oklch(0.24 0.03 280);
+  --muted-foreground: oklch(0.65 0.03 280);
+  --accent: oklch(0.70 0.15 195);
+  --accent-foreground: oklch(0.95 0.01 280);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.65 0.22 270);
+  --chart-1: oklch(0.65 0.22 270);
+  --chart-2: oklch(0.70 0.15 195);
+  --chart-3: oklch(0.60 0.20 300);
+  --chart-4: oklch(0.65 0.18 250);
+  --chart-5: oklch(0.50 0.20 310);
+  --sidebar: oklch(0.16 0.025 280);
+  --sidebar-foreground: oklch(0.95 0.01 280);
+  --sidebar-primary: oklch(0.65 0.22 270);
+  --sidebar-primary-foreground: oklch(0.14 0.02 280);
+  --sidebar-accent: oklch(0.24 0.04 270);
+  --sidebar-accent-foreground: oklch(0.95 0.01 280);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.65 0.22 270);
+  --brand-primary: #818cf8;
+  --brand-secondary: #a78bfa;
+  --brand-accent: #22d3ee;
+  --brand-warning: #fbbf24;
+  --brand-success: #34d399;
+  --dashboard-bg: #111827;
+  --dashboard-surface: rgba(24, 24, 37, 0.88);
+  --surface-glass: rgba(24, 24, 37, 0.72);
+  --surface-glass-strong: rgba(24, 24, 37, 0.90);
+  --shadow-card: 0 16px 40px rgba(0, 0, 0, 0.22);
+  --shadow-card-hover: 0 20px 48px rgba(0, 0, 0, 0.30);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* ========================================
+   CMAMSys 专业仪表盘风格 - 自定义工具类
+   ======================================== */
+
+/* 渐变背景 */
+.gradient-bg {
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 46%, var(--brand-accent) 100%);
+}
+
+.gradient-bg-subtle {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(124, 58, 237, 0.06) 45%, rgba(8, 145, 178, 0.08) 100%);
+}
+
+.gradient-bg-dark {
+  background: linear-gradient(135deg, oklch(0.24 0.06 270) 0%, oklch(0.28 0.08 282) 48%, oklch(0.28 0.06 220) 100%);
+}
+
+.gradient-bg-mesh {
+  background:
+    radial-gradient(at 12% 10%, rgba(79, 70, 229, 0.10) 0%, transparent 36%),
+    radial-gradient(at 88% 16%, rgba(8, 145, 178, 0.08) 0%, transparent 34%),
+    linear-gradient(135deg, var(--dashboard-bg) 0%, #f8fafc 58%, #eef7fb 100%);
+}
+
+/* 渐变文字 */
+.gradient-text {
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 50%, var(--brand-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, var(--brand-warning) 0%, #ef4444 55%, #db2777 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 毛玻璃卡片 */
+.glass-card {
+  background: var(--surface-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.70);
+  box-shadow: var(--shadow-card);
+}
+
+.glass-card-strong {
+  background: var(--surface-glass-strong);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  box-shadow: var(--shadow-card);
+}
+
+.dark .glass-card {
+  background: rgba(30, 27, 75, 0.7);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.dark .glass-card-strong {
+  background: rgba(30, 27, 75, 0.85);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* 渐变边框 */
+.gradient-border {
+  position: relative;
+  background: var(--dashboard-surface);
+  border-radius: var(--radius-lg);
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary), var(--brand-accent));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.dark .gradient-border {
+  background: oklch(0.18 0.025 280);
+}
+
+/* 渐变边框 - 悬浮效果 */
+.gradient-border-hover {
+  transition: all 0.3s ease;
+}
+
+.gradient-border-hover:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-1px);
+}
+
+/* 渐变图标背景 */
+.gradient-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+  color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.22);
+}
+
+.gradient-icon-cyan {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--brand-accent) 0%, #2563eb 100%);
+  color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 18px rgba(8, 145, 178, 0.22);
+}
+
+.gradient-icon-purple {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--brand-secondary) 0%, #a855f7 100%);
+  color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 18px rgba(124, 58, 237, 0.22);
+}
+
+/* 动画效果 */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.4); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s ease-out forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* 页面过渡 */
+.page-transition {
+  animation: fade-in-up 0.5s ease-out;
+}
+
+/* 粒子装饰背景 */
+.particles-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.particles-bg::before,
+.particles-bg::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.particles-bg::before {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--brand-primary), transparent 70%);
+  top: -80px;
+  right: -60px;
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.particles-bg::after {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, var(--brand-accent), transparent 70%);
+  bottom: -40px;
+  left: -40px;
+  animation: float 5s ease-in-out infinite;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--brand-primary), var(--brand-secondary));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--brand-secondary), var(--brand-accent));
+}
+
+/* 选中文字颜色 */
+::selection {
+  background: color-mix(in oklab, var(--brand-primary) 20%, transparent);
+  color: inherit;
+}
+
+/* ========================================
+   Tiptap 编辑器样式
+   ======================================== */
+
+.tiptap-editor {
+  outline: none;
+  min-height: 100%;
+}
+
+.tiptap-editor > * + * {
+  margin-top: 0.75em;
+}
+
+.tiptap-editor h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.tiptap-editor h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: color-mix(in oklab, var(--foreground) 88%, var(--muted-foreground));
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.tiptap-editor p {
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+  text-indent: 2em;
+}
+
+.tiptap-editor p:first-child {
+  text-indent: 0;
+}
+
+.tiptap-editor strong {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.tiptap-editor em {
+  font-style: italic;
+}
+
+.tiptap-editor u {
+  text-decoration: underline;
+}
+
+.tiptap-editor ol,
+.tiptap-editor ul {
+  padding-left: 2em;
+  margin: 0.5em 0;
+}
+
+.tiptap-editor ol li,
+.tiptap-editor ul li {
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: var(--muted-foreground);
+  margin-bottom: 0.25em;
+}
+
+.tiptap-editor ol li {
+  list-style-type: decimal;
+}
+
+.tiptap-editor ul li {
+  list-style-type: disc;
+}
+
+.tiptap-editor blockquote {
+  border-left: 3px solid var(--brand-warning);
+  padding-left: 1rem;
+  margin: 0.75rem 0;
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+
+.tiptap-editor pre {
+  background-color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin: 0.75rem 0;
+  overflow-x: auto;
+}
+
+.tiptap-editor pre code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--foreground);
+  background: none;
+  padding: 0;
+}
+
+.tiptap-editor code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.85em;
+  background-color: var(--muted);
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  color: var(--primary);
+}
+
+.tiptap-editor hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+.tiptap-editor table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.75rem 0;
+}
+
+.tiptap-editor table th,
+.tiptap-editor table td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.tiptap-editor table th {
+  background-color: var(--muted);
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+/* Tiptap Placeholder */
+.tiptap-editor p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: var(--muted-foreground);
+  pointer-events: none;
+  height: 0;
+  font-style: italic;
+}
+
+/* Tiptap focus ring */
+.tiptap-editor:focus {
+  outline: none;
+}
+
+/* ========================================
+   实时操作日志动画
+   ======================================== */
+
+@keyframes pulse-online {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+}
+
+.animate-pulse-online {
+  animation: pulse-online 2s ease-in-out infinite;
+}
+
+@keyframes log-fade-in {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-log-fade-in {
+  animation: log-fade-in 0.3s ease-out;
+}
+
+/* ========================================
+   新手引导预览交互动画
+   ======================================== */
+
+/* Step1 三层架构 token 沿连线流动 */
+@keyframes flow-token {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(var(--flow-distance, 100px));
+    opacity: 0;
+  }
+}
+
+.animate-flow-token {
+  animation: flow-token 2.4s linear infinite;
+}
+
+/* Step3 进度条扫描 */
+@keyframes progress-fill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.animate-progress-fill {
+  animation: progress-fill 1s ease-out forwards;
+}
+
+/* Step4 日志卡片由顶部冒出 */
+@keyframes feed-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-feed-pop {
+  animation: feed-pop 0.4s ease-out;
+}
+
+/* 通用：CTA 按钮入场 */
+@keyframes cta-pulse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+.animate-cta-pulse {
+  animation: cta-pulse 2.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .animate-float,
+  .animate-float-slow,
+  .animate-pulse-glow,
+  .animate-gradient-shift,
+  .animate-shimmer,
+  .animate-pulse-online,
+  .animate-flow-token,
+  .animate-cta-pulse,
+  .particles-bg::before,
+  .particles-bg::after {
+    animation: none !important;
+  }
+}
